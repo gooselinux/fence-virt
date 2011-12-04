@@ -1,0 +1,49 @@
+From 0358a4e5eaaf7153b990c5e4acd13263a75ffa1d Mon Sep 17 00:00:00 2001
+From: Lon Hohberger <lon@users.sourceforge.net>
+Date: Wed, 3 Feb 2010 15:07:17 -0500
+Subject: [PATCH] Rename parameters to match other fencing agents
+
+port -> ipport (IP port to use)
+domain -> port (VM to fence)
+
+Resolves: rhbz#561418
+
+Signed-off-by: Lon Hohberger <lon@users.sourceforge.net>
+---
+ client/options.c |    9 +++++++--
+ 1 files changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/client/options.c b/client/options.c
+index 0ddd333..31e6612 100644
+--- a/client/options.c
++++ b/client/options.c
+@@ -360,7 +360,7 @@ static struct arg_info _arg_info[] = {
+ 	  "VM Channel IP address (default=" DEFAULT_CHANNEL_IP ")",
+ 	  assign_channel_address },
+ 
+-	{ 'p', "-p <port>", "port",
++	{ 'p', "-p <port>", "ipport",
+           0, "string", "1229",
+ 	  "Multicast or VMChannel IP port (default=1229)",
+ 	  assign_port },
+@@ -411,11 +411,16 @@ static struct arg_info _arg_info[] = {
+ 	  "Fencing action (null, off, on, [reboot], status, list, monitor, metadata)",
+ 	  assign_op },
+ 
+-	{ 'H', "-H <domain>", "domain",
++	{ 'H', "-H <domain>", "port",
+ 	  0, "string", NULL,
+ 	  "Virtual Machine (domain name) to fence",
+ 	  assign_domain },
+ 
++	{ '\xff', NULL, "domain",
++	  0, "string", NULL,
++	  "Virtual Machine (domain name) to fence (deprecated; use port)",
++	  assign_domain },
++
+ 	{ 'u', "-u", "use_uuid",
+ 	  0, "string", "0",
+ 	  "Treat <domain> as UUID instead of domain name. This is provided for compatibility with older fence_xvmd installations.",
+-- 
+1.6.2.5
+

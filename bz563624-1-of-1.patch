@@ -1,0 +1,26 @@
+From baa344b57550e40e816acf9ff6cd3c3540688f98 Mon Sep 17 00:00:00 2001
+From: Lon Hohberger <lon@users.sourceforge.net>
+Date: Wed, 10 Feb 2010 13:32:38 -0500
+Subject: [PATCH] Fix metadata output
+
+Signed-off-by: Lon Hohberger <lon@users.sourceforge.net>
+---
+ client/options.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/client/options.c b/client/options.c
+index 31e6612..baf7822 100644
+--- a/client/options.c
++++ b/client/options.c
+@@ -423,7 +423,7 @@ static struct arg_info _arg_info[] = {
+ 
+ 	{ 'u', "-u", "use_uuid",
+ 	  0, "string", "0",
+-	  "Treat <domain> as UUID instead of domain name. This is provided for compatibility with older fence_xvmd installations.",
++	  "Treat [domain] as UUID instead of domain name. This is provided for compatibility with older fence_xvmd installations.",
+ 	  assign_uuid_lookup },
+ 
+ 	{ 't', "-t <timeout>", "timeout",
+-- 
+1.6.2.5
+

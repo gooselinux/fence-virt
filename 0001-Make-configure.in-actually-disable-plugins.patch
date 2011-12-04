@@ -1,0 +1,33 @@
+From f54e73f3928d172698d41ab01a54c68cc389b0cb Mon Sep 17 00:00:00 2001
+From: Lon Hohberger <lon@users.sourceforge.net>
+Date: Wed, 24 Feb 2010 14:06:53 -0500
+Subject: [PATCH] Make configure.in actually disable plugins
+
+Signed-off-by: Lon Hohberger <lon@users.sourceforge.net>
+---
+ configure.in |    2 --
+ 1 files changed, 0 insertions(+), 2 deletions(-)
+
+diff --git a/configure.in b/configure.in
+index 77a8fa3..f79801f 100644
+--- a/configure.in
++++ b/configure.in
+@@ -82,7 +82,6 @@ AC_SUBST(mod_libvirt)
+ AC_ARG_ENABLE(checkpoint-plugin,
+ [AS_HELP_STRING([--disable-checkpoint-plugin],
+ 		[Disable cluster checkpoint backend plugin])],
+-[ --disable-checkpoint-plugin  Do not include cluster checkpoint plugin.],
+ [ mod_checkpoint=$enableval ], [ mod_checkpoint=yes ])
+ AC_SUBST(mod_checkpoint)
+ 
+@@ -90,7 +89,6 @@ AC_SUBST(mod_checkpoint)
+ AC_ARG_ENABLE(libvirt-qpid-plugin,
+ [AS_HELP_STRING([--disable-libvirt-qpid-plugin],
+ 		[Disable libvirt-qpid backend plugin])],
+-[ --disable-libvirt-qpid-plugin  Do not include libvirt-qpid plugin.],
+ [ mod_libvirt_qpid=$enableval ], [ mod_libvirt_qpid=yes ])
+ AC_SUBST(mod_libvirt_qpid)
+ 
+-- 
+1.6.2.5
+

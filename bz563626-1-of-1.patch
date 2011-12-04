@@ -1,0 +1,20 @@
+From 882a128a506ea171b9126a05ef9b286f9fb1c9c1 Mon Sep 17 00:00:00 2001
+From: Lon Hohberger <lon@users.sourceforge.net>
+Date: Wed, 3 Feb 2010 15:06:46 -0500
+Subject: [PATCH] Fix fence_xvm man page to point to the right location
+
+Signed-off-by: Lon Hohberger <lon@users.sourceforge.net>
+---
+ man/fence_xvm.8 |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/man/fence_xvm.8 b/man/fence_xvm.8
+index 8c25e33..5d0cfdd 100644
+--- a/man/fence_xvm.8
++++ b/man/fence_xvm.8
+@@ -1 +1 @@
+-.so man8/dlm_lock.8
++.so man8/fence_virt.8
+-- 
+1.6.2.5
+
